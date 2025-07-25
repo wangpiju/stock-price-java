@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.portfolio'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+// Specify Java 17 toolchain
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClassName = 'com.portfolio.App'
+}
+
+dependencies {
+    // H2 In-Memory Database dependency
+    implementation 'com.h2database:h2:2.2.224'
+
+    // JUnit for testing (as allowed by the problem statement)
+    testImplementation 'junit:junit:4.13.2'
+}
